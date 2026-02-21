@@ -717,4 +717,15 @@ header {
     background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+/* Language switch refinement */
+.lang-switch {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-left: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.lang-switch:hover {
+    opacity: 1;
 }
