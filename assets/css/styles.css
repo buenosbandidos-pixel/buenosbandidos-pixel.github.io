@@ -1,86 +1,280 @@
-<!DOCTYPE html>
+:root{
+  --bg:#0b0b0a;
+  --fg:#f2efe8;
+  --muted:#b9b2a5;
+  --max:1100px;
+  --gutter:24px;
+  --radius:16px;
+}
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Buenos Bandidos – Film Production</title>
-<meta content="Buenos Bandidos is an international film production company based in Barcelona, focused on co-productions, development, packaging and distribution partnerships." name="description"/>
-<link href="assets/css/styles.css" rel="stylesheet"/>
-</head>
-<body class="dark"><a id="top"></a>
-<header class="site-header">
-<div class="container">
-<a aria-label="Buenos Bandidos home" class="brand" href="index.html">
-<img alt="Buenos Bandidos logo" class="brand-mark" src="assets/img/logo.jpeg"/>
-<span class="brand-text">BUENOS BANDIDOS</span>
-</a>
-<nav>
-<a href="projects.html">Projects</a>
-<a href="industry.html">Industry</a>
-<a href="contact.html">Contact</a>
-<a class="lang-switch" href="es/index.html">EN / ES</a>
-</div>
-</header>
-<main>
-<section aria-label="Hero image" class="hero">
-<img alt="Street musician in Barcelona" src="assets/img/street_guitar_4k.webp"/>
-<div class="hero-cue">SELECTED PROJECTS<div class="hero-cue-arrow">↓</div></div>
-</section>
-<section class="section">
-<div class="container">
-<p class="statement">International co-productions, development, packaging and financing — projects available for sales agents and distributors.</p>
-</div>
-</section>
-<section class="section tight">
-<div class="container">
-<h2 class="section-title">Selected projects</h2>
-<ul aria-label="Selected projects" class="projects">
-<li>
-<a class="project-title" href="don-quijote.html">Don Quijote de Barcelona</a>
-<span class="project-meta">Feature film · completed · seeking Spanish distribution &amp; a Spanish festival launch</span>
-</li>
-<li>
-<span class="project-title">Polvo de los Andes</span>
-<span class="project-meta">Series · development / packaging</span>
-</li>
-<li>
-<span class="project-title">Searching for My Surfer Son</span>
-<span class="project-meta">Feature · development</span>
-</li>
-</ul>
-<p class="projects-note">Further projects and materials available on request.</p>
-</div>
-</section>
-<figure class="fullbleed">
-<img alt="Alley still" src="assets/img/alley_wheelchair.jpg"/>
-</figure>
-<figure class="fullbleed">
-<img alt="Night conversation still" src="assets/img/night_conversation.jpg"/>
-</figure>
-<section class="section">
-<div class="container">
-<div aria-label="Manifesto" class="manifesto">
-<span class="line">Film first.</span>
-<span class="line muted">Company second.</span>
-<span class="line">Europe structure.</span>
-<span class="line muted">Latin warmth.</span>
-</div>
-</div>
-</section>
-<figure class="fullbleed">
-<img alt="Hospital still" src="assets/img/hospital.jpg"/>
-</figure>
-<footer class="footer">
-<div class="container footer-grid">
-<div aria-label="Footer" class="smallnav">
-<a href="projects.html">Projects</a>
-<a href="industry.html">Industry</a>
-<a href="contact.html">Contact</a>
-</div>
-<div>© 2026 Buenos Bandidos Producciones, S.L.</div>
-</div>
-</footer>
-</main>
-<div class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></div></body>
-</html>
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background:var(--bg);
+  color:var(--fg);
+  letter-spacing:0.2px;
+}
+a{color:inherit; text-decoration:none}
+a:hover{opacity:.85}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+
+/* ---------- HEADER / NAV (Yksi järjestelmä, ei duplikaatteja) ---------- */
+.site-header{
+  position:fixed;
+  top:18px;
+  left:0;
+  right:0;
+  z-index:50;
+  pointer-events:none;
+}
+
+.site-header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  pointer-events:auto;
+
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:999px;
+  padding:10px 14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  height:120px;          /* <-- TÄMÄ kasvattaa oikeasti logon */
+  width:auto;
+  display:block;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+}
+
+.brand-text{
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--fg);
+  white-space:nowrap;
+  font-size:14px;
+}
+
+nav a{
+  margin-left:18px;
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(242,239,232,.78);
+  padding:6px 0;
+}
+
+nav a:hover{
+  color:rgba(242,239,232,.95);
+  text-decoration:underline;
+  text-underline-offset:6px;
+  text-decoration-thickness:1px;
+}
+
+nav a.active{color:var(--fg)}
+
+.lang-switch{
+  margin-left:18px;
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:0.85;
+}
+
+.lang-switch:hover{opacity:1}
+
+/* ---------- SECTIONS ---------- */
+.section{padding:90px 0}
+.section.tight{padding:60px 0}
+
+/* ---------- HERO ---------- */
+.hero{
+  height:92vh;
+  min-height:520px;
+  width:100%;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+}
+
+.hero img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(11,11,10,.55) 0%, rgba(11,11,10,.22) 40%, rgba(11,11,10,.08) 75%, rgba(11,11,10,0) 100%),
+    linear-gradient(to bottom, rgba(11,11,10,0) 55%, rgba(11,11,10,.55) 100%);
+}
+
+.hero-cue{
+  position:absolute;
+  left:50%;
+  bottom:34px;
+  transform:translateX(-50%);
+  z-index:5;
+  font-size:11px;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  color:rgba(242,239,232,.60);
+  padding:0;
+  background:transparent;
+  border:none;
+  text-align:center;
+}
+.hero-cue-arrow{
+  margin-top:6px;
+  font-size:16px;
+  letter-spacing:0;
+}
+
+/* ---------- HOME CONTENT ---------- */
+.statement{
+  font-size:30px;
+  line-height:1.3;
+  max-width:740px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.section-title{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:center;
+  margin:0 0 26px 0;
+}
+
+.projects{
+  list-style:none;
+  padding:0;
+  margin:0 auto;
+  max-width:780px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.projects li{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding-top:10px;
+  border-top:1px solid rgba(242,239,232,.08);
+}
+.projects li:first-child{border-top:0; padding-top:0}
+
+.project-title{
+  font-size:22px;
+  color:var(--fg);
+}
+
+.project-meta{
+  color:rgba(242,239,232,.74);
+  font-size:14px;
+  line-height:1.55;
+}
+
+.projects-note{
+  margin:26px auto 0;
+  max-width:780px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+/* ---------- FULLBLEED IMAGES ---------- */
+.fullbleed{width:100%; margin:0}
+.fullbleed img{width:100%; height:auto; display:block}
+
+/* ---------- MANIFESTO ---------- */
+.manifesto{
+  text-align:center;
+  font-size:24px;
+  line-height:1.55;
+  color:var(--fg);
+}
+.manifesto .line{display:block}
+.manifesto .line.muted{color:var(--muted)}
+
+/* ---------- FOOTER + BACK TO TOP ---------- */
+.footer{
+  padding:48px 0 24px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.footer .smallnav{
+  display:flex;
+  gap:18px;
+  text-transform:uppercase;
+  letter-spacing:1.1px;
+}
+
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--fg)}
+
+.back-to-top-wrap{
+  display:flex;
+  justify-content:center;
+  padding:18px 0 70px;
+}
+
+.back-to-top{
+  display:inline-block;
+  font-size:0.9rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color: rgba(242,242,242,0.75);
+  border-bottom: 1px solid rgba(242,242,242,0.25);
+}
+.back-to-top:hover{
+  color: rgba(242,242,242,0.95);
+  border-bottom-color: rgba(242,242,242,0.6);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px){
+  .statement{font-size:22px}
+  .manifesto{font-size:20px}
+  .hero{height:78vh}
+  .brand-mark{height:92px}   /* edelleen iso, mutta mahtuu */
+  .brand-text{display:none}  /* puhelimessa siistimpi */
+  nav a{margin-left:14px; font-size:12px}
+  .site-header .container{padding:10px 12px}
+}
