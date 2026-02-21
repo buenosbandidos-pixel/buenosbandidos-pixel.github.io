@@ -336,7 +336,7 @@ a:hover{opacity:.85}
   color:rgba(242,239,232,.60);
 }
 @media (max-width:720px){
-  .brand img{height:64px}
+  .brand img{height:83px}
   .brand-wordmark{font-size:22px}
   .brand-sub{display:none}
 }
