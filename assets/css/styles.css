@@ -699,4 +699,22 @@ nav a.active {
 .back-to-top-wrap{
   display:flex;
   justify-content:center;
+/* Larger logo */
+.logo img {
+    height: 52px;
+/* Language switch refinement */
+.lang-switch {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.lang-switch:hover {
+    opacity: 1;
+/* Subtle cinematic header */
+header {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
