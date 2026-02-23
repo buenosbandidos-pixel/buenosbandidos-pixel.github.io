@@ -86,9 +86,41 @@ nav a:hover{
   color:#aaa;
   font-size:14px;
 }
+/* HEADER */
+.site-header {
+  position: relative;
+  padding: 30px 40px;
+}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .brand-mark{height:80px;}
-  nav a{margin-left:16px;font-size:13px;}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.brand-mark {
+  height: clamp(90px, 8vw, 160px);
+  width: auto;
+  display: block;
+}
+
+/* LINKS */
+nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  opacity: 0.6;
 }
