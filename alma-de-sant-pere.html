@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Alma de Sant Pere — Buenos Bandidos</title>
+  <meta name="description" content="Alma de Sant Pere — a feature film by Jarmo Lampela, set in Barcelona. Produced by Vegetarian Films."/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body><a id="top"></a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Buenos Bandidos home">
+      <img class="brand-mark" src="assets/img/logo.svg" alt="Buenos Bandidos logo"/>
+      <span class="brand-text">Buenos Bandidos</span>
+    </a>
+    <nav>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="industry.html">Industry</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang" href="es/alma-de-sant-pere.html">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero with backdrop -->
+  <section class="project-hero">
+    <img src="assets/img/alma_backdrop.jpg" alt="Alma de Sant Pere — still"/>
+    <div class="project-hero-content">
+      <div class="kicker">Feature film</div>
+      <div class="h1">Alma de<br/>Sant Pere</div>
+      <div class="status">Drama &middot; 96' &middot; 2016 &middot; Finland / Spain</div>
+    </div>
+  </section>
+
+  <!-- Poster + Synopsis -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="poster-layout">
+        <div class="poster">
+          <img src="assets/img/alma_poster.jpg" alt="Alma de Sant Pere — poster"/>
+        </div>
+        <div>
+          <div class="prose">
+            <p>Alma is a young, ambitious woman running a small company in Barcelona. She dreams of a bigger project &mdash; one that would bring in the first million. When the opportunity arises, she and her friends buy an old building in the historic Sant Pere neighbourhood with plans to renovate it into luxury apartments.</p>
+            <p>But the project forces Alma to confront what she is willing to sacrifice: the tenants who call the building home, the friendships that made the venture possible, and ultimately, her own sense of right and wrong.</p>
+            <p><em>Alma de Sant Pere</em> is a film about the collision between tradition and progress, between the logic of profit and the cost of moral compromise. Set against the sunlit streets and crumbling facades of Barcelona, it asks what remains when ambition has run its course.</p>
+          </div>
+          <div class="body-text" style="margin-top:24px; font-style:italic; color:var(--muted)">
+            <p>&ldquo;A perfect opportunity at a perfectly wrong time.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trailer -->
+  <section class="section--tight reveal">
+    <div class="container">
+      <div class="kicker">Trailer</div>
+      <div class="video" style="margin-top:20px">
+        <video controls preload="metadata" playsinline poster="assets/img/alma_backdrop.jpg" style="width:100%; display:block; border-radius:var(--radius)">
+          <source src="assets/video/alma_trailer.mp4" type="video/mp4"/>
+          <track kind="subtitles" src="assets/video/alma_en.vtt" srclang="en" label="English"/>
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credits -->
+  <section class="section--tight reveal">
+    <div class="container">
+      <div class="hr"></div>
+      <div class="kicker">Credits</div>
+      <div class="body-text" style="margin-top:16px">
+        <p>
+          <strong>Director, Writer &amp; Producer</strong> &mdash; Jarmo Lampela<br/>
+          <strong>Cast</strong> &mdash; Carla de Otero, Ra&uuml;l Llopart, Laura Birn, Ar&aacute;ntzazu Ru&iacute;z, Juha Kukkonen, Rea Mauranen, Santiago Melis<br/>
+          <strong>Cinematography</strong> &mdash; Aarne Tapola<br/>
+          <strong>Music</strong> &mdash; Pekka Lehti<br/>
+          <strong>Editing</strong> &mdash; Oskar Franz&eacute;n<br/>
+          <strong>Production Design</strong> &mdash; Juha Filin<br/>
+          <strong>Costume Design</strong> &mdash; Maria Combalia<br/>
+          <strong>Sound Design</strong> &mdash; Patrick Boullenger<br/>
+          <strong>Production</strong> &mdash; Vegetarian Films
+        </p>
+      </div>
+
+      <div class="hr"></div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:clamp(24px,4vw,48px)">
+        <div>
+          <div class="kicker">Technical</div>
+          <div class="body-text" style="margin-top:12px">
+            <p>96 min &middot; 2.39:1<br/>Color &middot; 5.1<br/>Spanish, English, Catalan<br/>Subtitles: English</p>
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Festivals</div>
+          <div class="body-text" style="margin-top:12px">
+            <p>Helsinki IFF (World Premiere)<br/>Goa IFF (Int'l Premiere)<br/>Beijing IFF (Panorama)<br/>Pune IFF<br/>Cine Global Dominicano</p>
+          </div>
+        </div>
+        <div>
+          <div class="kicker">Sales &amp; Distribution</div>
+          <div class="body-text" style="margin-top:12px">
+            <p>International sales:<br/>Buenos Bandidos Producciones<br/><br/>Available on<br/>Amazon Prime Video<br/>Apple TV</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="smallnav">
+        <a href="projects.html">Projects</a>
+        <a href="industry.html">Industry</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>&copy; 2026 Buenos Bandidos Producciones, S.L.</div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
+</script>
+
+<div class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></div>
+</body>
+</html>

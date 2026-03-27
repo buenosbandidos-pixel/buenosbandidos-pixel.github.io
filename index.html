@@ -1,42 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Buenos Bandidos – Film Production</title>
-
-<link rel="stylesheet" href="assets/css/styles.css">
-
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Buenos Bandidos — Film Production</title>
+  <meta name="description" content="Buenos Bandidos is an international film production company based in Barcelona, focused on co-productions, development, packaging and distribution partnerships."/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
-
-<body>
+<body><a id="top"></a>
 
 <header class="site-header">
-    <div class="container header-inner">
-
-        <a href="index.html" class="brand">
-            <img src="assets/img/logo.jpeg" alt="Buenos Bandidos Logo" class="brand-mark">
-        </a>
-
-        <nav>
-            <a href="projects.html">Projects</a>
-            <a href="industry.html">Industry</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-    </div>
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Buenos Bandidos home">
+      <img class="brand-mark" src="assets/img/logo.svg" alt="Buenos Bandidos logo"/>
+      <span class="brand-text">Buenos Bandidos</span>
+    </a>
+    <nav>
+      <a href="projects.html">Projects</a>
+      <a href="industry.html">Industry</a>
+      <a href="contact.html">Contact</a>
+      <a class="lang" href="es/index.html">ES</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>International Film Production Company</h1>
+<main>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero image">
+    <img src="assets/img/street_guitar_4k.webp" alt="Street musician in Barcelona"/>
+    <div class="hero-caption">
+      <p class="tagline">International film production — Barcelona</p>
     </div>
-</section>
+  </section>
 
-<footer>
-    © 2026 Buenos Bandidos Producciones
-</footer>
+  <!-- Statement -->
+  <section class="section--spacious reveal">
+    <div class="container">
+      <p class="statement">Co-productions, development, packaging and financing — projects available for sales agents and distributors.</p>
+    </div>
+  </section>
 
+  <!-- Cinematic still -->
+  <figure class="fullbleed fullbleed--cinematic reveal">
+    <img src="assets/img/alley_wheelchair.jpg" alt="Alley scene with wheelchair"/>
+  </figure>
+
+  <!-- Selected projects -->
+  <section class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Selected Projects</h2>
+      <ul class="projects" aria-label="Selected projects">
+        <li>
+          <a class="project-title" href="don-quijote.html">Don Quijote de Barcelona</a>
+          <span class="project-meta">Feature film · completed · seeking Spanish distribution &amp; festival launch</span>
+        </li>
+        <li>
+          <a class="project-title" href="alma-de-sant-pere.html">Alma de Sant Pere</a>
+          <span class="project-meta">Feature film &middot; completed &middot; available on Amazon Prime Video &amp; Apple TV</span>
+        </li>
+        <li>
+          <span class="project-title">Polvo de los Andes</span>
+          <span class="project-meta">Series · development / packaging</span>
+        </li>
+        <li>
+          <span class="project-title">Searching for My Surfer Son</span>
+          <span class="project-meta">Feature · development</span>
+        </li>
+      </ul>
+      <p class="projects-note">Further projects and materials available on request.</p>
+    </div>
+  </section>
+
+  <!-- Cinematic still -->
+  <figure class="fullbleed fullbleed--cinematic reveal">
+    <img src="assets/img/night_conversation.jpg" alt="Night conversation still"/>
+  </figure>
+
+  <!-- Manifesto -->
+  <section class="section--spacious reveal">
+    <div class="container">
+      <div class="manifesto" aria-label="Manifesto">
+        <span class="line">Film first.</span>
+        <span class="line muted">Company second.</span>
+        <span class="line">European structure.</span>
+        <span class="line muted">Latin warmth.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cinematic still -->
+  <figure class="fullbleed fullbleed--cinematic reveal">
+    <img src="assets/img/hospital.jpg" alt="Hospital still"/>
+  </figure>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="smallnav" aria-label="Footer">
+        <a href="projects.html">Projects</a>
+        <a href="industry.html">Industry</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>&copy; 2026 Buenos Bandidos Producciones, S.L.</div>
+    </div>
+  </footer>
+
+</main>
+
+<div class="back-to-top-wrap"><a class="back-to-top" href="#top">Back to top</a></div>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Header scroll state
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
+</script>
 </body>
 </html>
