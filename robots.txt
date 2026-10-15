@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://buenosbandidos-pixel.github.io/sitemap.xml
